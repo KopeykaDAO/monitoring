@@ -8,7 +8,7 @@ rm -rf /tmp/node_exporter*
 useradd -rs /bin/false node_exporter
 chown node_exporter:node_exporter /usr/bin/node_exporter
 IP=$(ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-cat <<EOF> ~/node_exporter.service
+cat <<EOF> /etc/systemd/system/node_exporter.service
 [Unit]
 Description=Prometheus Node Exporter
 After=network.target
