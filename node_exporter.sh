@@ -17,7 +17,7 @@ After=network.target
 User=node_exporter
 Group=node_exporter
 Type=simple
-Restart=on-failure
+Restart=always
 ExecStart=/usr/bin/node_exporter --web.listen-address=$IP:61100
 
 [Install]
